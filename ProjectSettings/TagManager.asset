@@ -38,6 +38,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1133217281
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Target
+    uniqueID: 3829877699
+    locked: 0
+  - name: Stall Sides
+    uniqueID: 713946455
+    locked: 0
+  - name: Stall Top
+    uniqueID: 3737923823
+    locked: 0
+  - name: Gun
+    uniqueID: 703046161
+    locked: 0
+  - name: UI
+    uniqueID: 3700210439
     locked: 0
