@@ -17,7 +17,7 @@ public class RiflePosition : MonoBehaviour {
 	float width = 3;
 	float height = 2;
 
-	void FireGun()
+	public void FireGun()
 	{
 		d = 1;
 	}
@@ -29,10 +29,6 @@ public class RiflePosition : MonoBehaviour {
 		}
 		else {
 			d = 0;
-		}
-
-		if(Input.GetMouseButton(0)) {
-			FireGun();
 		}
 
 		var p = Input.mousePosition;

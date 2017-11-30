@@ -37,6 +37,17 @@ public class BubbleSpawner : MonoBehaviour {
 		SpawnAt(RandomX(), -offsety);
 	}
 
+	float shotx = 0.4f;
+	float shoty = 0.4f;
+	int shotcount = 5;
+
+	public void SpawnBubblesFromShot(float x, float y)
+	{
+		for(int i=0; i<shotcount; i += 1) {
+			SpawnAt(Random.Range(-shotx, shotx)+x, Random.Range(-shoty, shoty)+y);
+		}
+	}
+
 	float timer = 0;
 
 	void Update () {
