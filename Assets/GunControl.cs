@@ -9,10 +9,30 @@ public class GunControl : MonoBehaviour {
 	public BubbleSpawner Spawner;
 	public AmmoCount Ammo;
 
+	public EnabledSprite[] SpriteStates;
+
 	float reloadTime = 0.3f;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		SetEnabled();
+	}
+
+	void SetEnabled()
+	{
+		foreach(var e in SpriteStates)
+		{
+			e.SetEnable();
+		}
+	}
+
+	void SetDisable()
+	{
+		foreach(var e in SpriteStates)
+		{
+			e.SetDisable();
+		}
 	}
 
 	bool loading = false;
@@ -30,7 +50,7 @@ public class GunControl : MonoBehaviour {
 			{
 				loading = true;
 				t = 0;
-				Gun.SetDisable();
+				SetDisable();
 			}
 		}
 	}
@@ -47,7 +67,7 @@ public class GunControl : MonoBehaviour {
 				{
 					loading = false;
 					// cock gun
-					Gun.SetEnable();
+					SetEnabled();
 				}
 				else 
 				{
