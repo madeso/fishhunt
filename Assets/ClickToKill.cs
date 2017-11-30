@@ -13,7 +13,7 @@ public class ClickToKill : MonoBehaviour {
 	void Update () {
 	}
 
-	void OnMouseDown()
+	public void Kill()
 	{
 		Object.Destroy(this.gameObject);
 	}

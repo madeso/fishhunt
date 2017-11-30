@@ -35,12 +35,26 @@ public class GunControl : MonoBehaviour {
 		}
 	}
 
+	void KillFish()
+	{
+		var p = Aim.transform.position;
+		var colliders = Physics2D.OverlapCircleAll(new Vector2(p.x, p.y), 0.3f);
+		foreach(var collider in colliders)
+		{
+			var kill = collider.gameObject.GetComponent<ClickToKill>();
+			if(kill == null) continue;
+			kill.Kill();
+			// todo: support multikill bonuses
+		}
+	}
+
 	bool loading = false;
 	float t = 0;
 
 	void FireGun() {
 		if( Ammo.HasMoreBullets() )
 		{
+			KillFish();
 			Ammo.Shoot();
 			this.Gun.FireGun();
 			var p = this.Aim.transform.position;
