@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RiflePosition : MonoBehaviour {
+	public Sprite EnabledGun;
+	public Sprite DisabledGun;
+
+
+	SpriteRenderer rend;
+
 	Vector3 relative;
 
 	float d = 0;
@@ -12,10 +18,21 @@ public class RiflePosition : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.relative = this.transform.position;
+		rend = this.GetComponent<SpriteRenderer>();
 	}
 
 	float width = 3;
 	float height = 2;
+
+	public void SetEnable()
+	{
+		rend.sprite = EnabledGun;
+	}
+
+	public void SetDisable()
+	{
+		rend.sprite = DisabledGun;
+	}
 
 	public void FireGun()
 	{

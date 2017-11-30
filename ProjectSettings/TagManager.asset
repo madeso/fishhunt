@@ -41,6 +41,9 @@ TagManager:
   - name: Background
     uniqueID: 1133217281
     locked: 0
+  - name: Background Detail
+    uniqueID: 1063504359
+    locked: 0
   - name: Sand
     uniqueID: 474173879
     locked: 0
