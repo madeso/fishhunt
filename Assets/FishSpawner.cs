@@ -15,7 +15,7 @@ public class FishSpawner : MonoBehaviour {
 	float offsetx = 10;
 	float offsety = 3;
 
-	public FishMove fish_template;
+	public FishMove[] FishTemplates;
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,6 +28,8 @@ public class FishSpawner : MonoBehaviour {
 
 	void SpawnFish()
 	{
+		var fish_index = Random.Range(0, FishTemplates.Length-1);
+		var fish_template = FishTemplates[fish_index];
 		var fish = GameObject.Instantiate<FishMove>(fish_template);
 		var right = Random.value > 0.5f;
 		var dx = (right?1:-1) * offsetx;
