@@ -4002,6 +4002,9 @@ MonoBehaviour:
   Gun: {fileID: 184552395}
   Spawner: {fileID: 598661208}
   Ammo: {fileID: 1750917045}
+  FireSfx: {fileID: 8300000, guid: fc6446e5306034dea9dd08b24bec0598, type: 3}
+  ChamberRoundSfx: {fileID: 8300000, guid: c2e54d83a3df344c3aa51e561a727897, type: 3}
+  PumpShotgunSfx: {fileID: 8300000, guid: 9913807d537084618b0249d4528e9489, type: 3}
   SpriteStates:
   - {fileID: 1876874481}
   - {fileID: 184552398}

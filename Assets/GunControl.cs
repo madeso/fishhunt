@@ -9,6 +9,10 @@ public class GunControl : MonoBehaviour {
 	public BubbleSpawner Spawner;
 	public AmmoCount Ammo;
 
+	public AudioClip FireSfx;
+	public AudioClip ChamberRoundSfx;
+	// public AudioClip PumpShotgunSfx;
+
 	public EnabledSprite[] SpriteStates;
 
 	float reloadTime = 0.3f;
@@ -54,6 +58,7 @@ public class GunControl : MonoBehaviour {
 	void FireGun() {
 		if( Ammo.HasMoreBullets() )
 		{
+			Play(FireSfx);
 			KillFish();
 			Ammo.Shoot();
 			this.Gun.FireGun();
@@ -80,12 +85,13 @@ public class GunControl : MonoBehaviour {
 				if(Ammo.IsFull() )
 				{
 					loading = false;
-					// cock gun
+					// Play(PumpShotgunSfx);
 					SetEnabled();
 				}
 				else 
 				{
 					Ammo.LoadBullet();
+					Play(ChamberRoundSfx);
 				}
 			}
 		}
@@ -95,5 +101,10 @@ public class GunControl : MonoBehaviour {
 				FireGun();
 			}
 		}
+	}
+
+	void Play(AudioClip clip)
+	{
+		AudioSource.PlayClipAtPoint(clip, this.transform.position);
 	}
 }
