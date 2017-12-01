@@ -12,8 +12,8 @@ public class FishMove : MonoBehaviour {
 	int mul = 1;
 	float t = 0;
 
-	float Speed = 1;
-	float SinSize = 0.1f;
+	public float Speed = 1;
+	public float SinSize = 0.1f;
 
 	
 	// Update is called once per frame
