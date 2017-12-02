@@ -11,7 +11,7 @@ public class GunControl : MonoBehaviour {
 
 	public AudioClip FireSfx;
 	public AudioClip ChamberRoundSfx;
-	// public AudioClip PumpShotgunSfx;
+	public AudioClip PumpShotgunSfx;
 
 	public EnabledSprite[] SpriteStates;
 
@@ -85,7 +85,7 @@ public class GunControl : MonoBehaviour {
 				if(Ammo.IsFull() )
 				{
 					loading = false;
-					// Play(PumpShotgunSfx);
+					Play(PumpShotgunSfx);
 					SetEnabled();
 				}
 				else 
