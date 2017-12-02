@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114817381102927508}
   - component: {fileID: 114786505289173134}
   - component: {fileID: 61467632875642380}
+  - component: {fileID: 114836090278087900}
   m_Layer: 0
   m_Name: speedy
   m_TagString: Untagged
@@ -93,6 +94,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Skeleton: {fileID: 114296385644201920, guid: 9049598d0625f449bb6d48bb5157cbfe, type: 2}
+--- !u!114 &114836090278087900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108829303707616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d234d388143452bab420a8570021a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212191547414411352
 SpriteRenderer:
   m_ObjectHideFlags: 1

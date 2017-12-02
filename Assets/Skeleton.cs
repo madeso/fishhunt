@@ -19,9 +19,9 @@ public class Skeleton : MonoBehaviour {
 	void Update () {
 		var p = this.transform.position;
 		p.y -= Time.deltaTime * speed;
-		if(p.y < -5 )
+		if(p.y < -6 )
 		{
-			// GameObject.Destroy(this);
+			GameObject.Destroy(this.gameObject);
 		}
 		this.transform.position = p;
 	}
