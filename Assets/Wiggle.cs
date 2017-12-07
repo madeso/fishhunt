@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wiggle : MonoBehaviour {
 	float d;
-	float r;
+	// float r;
 
 	float rot = 5;
 	float rspeed = 1.5f;
@@ -12,7 +12,7 @@ public class Wiggle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		d = Random.Range(0, 1);
-		r = this.transform.rotation.z;
+		// r = this.transform.rotation.z;
 	}
 	
 	// Update is called once per frame

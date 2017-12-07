@@ -8,17 +8,22 @@ public class EnabledSprite : MonoBehaviour {
 
 	SpriteRenderer rend;
 
+	public bool SpriteEnabled {get; set;}
+
 	void Start () {
 		rend = this.GetComponent<SpriteRenderer>();
+		SetEnable();
 	}
 	
 	public void SetEnable()
 	{
+		this.SpriteEnabled = true;
 		rend.sprite = EnabledGun;
 	}
 
 	public void SetDisable()
 	{
+		this.SpriteEnabled = false;
 		rend.sprite = DisabledGun;
 	}
 }
