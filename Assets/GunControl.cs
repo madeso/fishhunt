@@ -8,6 +8,7 @@ public class GunControl : MonoBehaviour {
 	public RiflePosition Gun;
 	public BubbleSpawner Spawner;
 	public AmmoCount Ammo;
+	public FireScale FireScale;
 
 	public AudioClip FireSfx;
 	public AudioClip ChamberRoundSfx;
@@ -61,6 +62,7 @@ public class GunControl : MonoBehaviour {
 			Play(FireSfx);
 			KillFish();
 			Ammo.Shoot();
+			FireScale.Fire();
 			this.Gun.FireGun();
 			var p = this.Aim.transform.position;
 			this.Spawner.SpawnBubblesFromShot(p.x, p.y);
