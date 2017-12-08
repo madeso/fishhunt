@@ -11,7 +11,7 @@ public class RiflePosition : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.relative = this.transform.position;
+		this.relative = this.transform.localPosition;
 	}
 
 	float width = 3;
@@ -35,6 +35,6 @@ public class RiflePosition : MonoBehaviour {
 		var x = (p.x / Screen.width)*2 - 1;
 		var y = (p.y / Screen.height)*2 - 1;
 
-		this.transform.position = this.relative + new Vector3(x*this.width, y*this.height) + displace * d;
+		this.transform.localPosition = this.relative + new Vector3(x*this.width, y*this.height) + displace * d;
 	}
 }
