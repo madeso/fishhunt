@@ -431,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4802985b244a2441e985016869af8ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  height: 5
 --- !u!4 &46455077
 Transform:
   m_ObjectHideFlags: 0
@@ -3758,7 +3759,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fbb15c9c52b4ca2abe2b75d8cf82e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intro: {fileID: 46455076}
+  intros:
+  - {fileID: 46455076}
+  - {fileID: 1750917047}
 --- !u!4 &1154422529
 Transform:
   m_ObjectHideFlags: 0
@@ -5403,6 +5406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750917046}
   - component: {fileID: 1750917045}
+  - component: {fileID: 1750917047}
   m_Layer: 0
   m_Name: AmmoCount
   m_TagString: Untagged
@@ -5449,6 +5453,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1750917047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1750917044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4802985b244a2441e985016869af8ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: -1
 --- !u!1 &1786271047
 GameObject:
   m_ObjectHideFlags: 0

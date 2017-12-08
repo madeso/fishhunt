@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 	CurtainControl curtains;
 
-	public RifleIntro intro;
+	public RifleIntro[] intros;
 
 	float d = 0;
 
@@ -32,6 +32,9 @@ public class GameController : MonoBehaviour {
 		}
 
 		curtains.SetPosition(d);
-		intro.SetPosition(d);
+		foreach(var intro in intros)
+		{
+			intro.SetPosition(d);
+		}
 	}
 }

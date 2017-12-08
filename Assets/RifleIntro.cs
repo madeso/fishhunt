@@ -7,7 +7,7 @@ public class RifleIntro : MonoBehaviour {
 
 	float y;
 
-	float height = 10;
+	public float height = 10;
 
 	public void SetPosition(float d)
 	{
