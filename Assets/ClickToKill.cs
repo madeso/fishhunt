@@ -7,18 +7,40 @@ public class ClickToKill : MonoBehaviour {
 
 	SpriteRenderer rend;
 
+	GameController gc;
+
 	// Use this for initialization
 	void Start () {
 		rend = GetComponent<SpriteRenderer>();
+
+		var gco = GameObject.Find("GameController");
+		if(gco == null)
+		{
+			Debug.Log("Failed to find gc object");
+		}
+		else
+		{
+			this.gc = gco.GetComponent<GameController>();
+		}
+
+		if(this.gc == null)
+		{
+			Debug.Log("Failed to find gc");
+		}
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	}
 
 	public void Kill()
 	{
 		Object.Destroy(this.gameObject);
+		if( this.gc != null )
+		{
+			this.gc.NotifyKill();
+		}
 
 		if(this.Skeleton == null)
 		{

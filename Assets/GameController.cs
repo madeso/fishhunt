@@ -11,11 +11,28 @@ public class GameController : MonoBehaviour {
 	bool fired = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+	}
+
+	int killcount = 0;
+	public void NotifyKill()
+	{
+		killcount += 1;
+	}
+
+	void LateUpdate()
+	{
+		if(killcount > 1 )
+		{
+			Debug.Log("Multikill");
+		}
+		killcount = 0;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		if( fired )
 		{
 			d += 2.1f * Time.deltaTime;
