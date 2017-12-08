@@ -1107,6 +1107,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 232264265}
+  - component: {fileID: 232264266}
   m_Layer: 0
   m_Name: CurtainTop
   m_TagString: Untagged
@@ -1132,6 +1133,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232264266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 232264264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4802985b244a2441e985016869af8ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dy: 1.3
+  dx: 0
 --- !u!1 &270586806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,7 +3739,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1154422529}
   - component: {fileID: 1154422528}
-  - component: {fileID: 1154422527}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3733,22 +3746,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1154422527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1154422526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c08bbfb19bf44dea99e5c1f92dbf97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurtainLeft: {fileID: 1946568436}
-  CurtainRight: {fileID: 1181429451}
-  CurtainTop: {fileID: 232264265}
-  CurtainHeight: 1.3
-  CurtainWidth: 3.1
 --- !u!114 &1154422528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3763,6 +3760,9 @@ MonoBehaviour:
   intros:
   - {fileID: 46455076}
   - {fileID: 1750917047}
+  - {fileID: 232264266}
+  - {fileID: 1946568437}
+  - {fileID: 1181429452}
 --- !u!4 &1154422529
 Transform:
   m_ObjectHideFlags: 0
@@ -3835,6 +3835,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1181429451}
+  - component: {fileID: 1181429452}
   m_Layer: 0
   m_Name: CurtainRight
   m_TagString: Untagged
@@ -3856,6 +3857,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1181429452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1181429450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4802985b244a2441e985016869af8ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dy: 0
+  dx: 3.1
 --- !u!1001 &1207962435
 Prefab:
   m_ObjectHideFlags: 0
@@ -6421,6 +6435,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1946568436}
+  - component: {fileID: 1946568437}
   m_Layer: 0
   m_Name: CurtainLeft
   m_TagString: Untagged
@@ -6442,6 +6457,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946568437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946568435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4802985b244a2441e985016869af8ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dy: 0
+  dx: -3.1
 --- !u!1 &1955356746
 GameObject:
   m_ObjectHideFlags: 0

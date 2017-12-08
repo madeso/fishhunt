@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-	CurtainControl curtains;
-
 	public IntroMove[] intros;
 
 	float d = 0;
@@ -13,7 +11,6 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		curtains = GetComponent<CurtainControl>();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +28,6 @@ public class GameController : MonoBehaviour {
 			}
 		}
 
-		curtains.SetPosition(d);
 		foreach(var intro in intros)
 		{
 			intro.SetPosition(d);
