@@ -3764,6 +3764,15 @@ MonoBehaviour:
   - {fileID: 1946568437}
   - {fileID: 1181429452}
   gun: {fileID: 1278481461}
+  Ready: {fileID: 8300000, guid: 612e1c1a8ce704f849b00a644446dbcf, type: 3}
+  Begin: {fileID: 8300000, guid: 6b85ccec1829a4f08817f8a3988dce37, type: 3}
+  Multikill: {fileID: 8300000, guid: 5b5e6e9685e1a4ac69930a4ff836bab4, type: 3}
+  ComboBreaker: {fileID: 8300000, guid: 0f6fb5d95e808448a94a9feb0d735fce, type: 3}
+  Three: {fileID: 8300000, guid: a65422e436f2c4019ae910a60bd3ab19, type: 3}
+  Two: {fileID: 8300000, guid: c2bfc3eb092b24c1db1edeff029e68e0, type: 3}
+  One: {fileID: 8300000, guid: 336cf4d5ee80943e0a538ee80ff8b245, type: 3}
+  Win: {fileID: 8300000, guid: 1c1462d5df4ee4d6fb2c3984ba9e2394, type: 3}
+  Flawless: {fileID: 8300000, guid: 4594a63f1db64474b84077cb98a4d7ec, type: 3}
 --- !u!4 &1154422529
 Transform:
   m_ObjectHideFlags: 0

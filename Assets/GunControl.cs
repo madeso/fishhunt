@@ -56,7 +56,8 @@ public class GunControl : MonoBehaviour {
 	bool loading = false;
 	float t = 0;
 
-	public void FireGun() {
+	public bool FireGun() {
+		bool fired = false;
 		if(loading == false)
 		{
 			if( Ammo.HasMoreBullets() )
@@ -68,6 +69,7 @@ public class GunControl : MonoBehaviour {
 				this.Gun.FireGun();
 				var p = this.Aim.transform.position;
 				this.Spawner.SpawnBubblesFromShot(p.x, p.y);
+				fired = true;
 
 				if(!Ammo.HasMoreBullets())
 				{
@@ -77,6 +79,8 @@ public class GunControl : MonoBehaviour {
 				}
 			}
 		}
+
+		return fired;
 	}
 	
 	// Update is called once per frame
@@ -112,6 +116,6 @@ public class GunControl : MonoBehaviour {
 
 	void Play(AudioClip clip)
 	{
-		AudioSource.PlayClipAtPoint(clip, this.transform.position);
+		AudioSource.PlayClipAtPoint(clip, this.transform.position, 0.4f);
 	}
 }

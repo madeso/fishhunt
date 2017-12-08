@@ -6,7 +6,26 @@ public class GameController : MonoBehaviour {
 	public IntroMove[] intros;
 	public GunControl gun;
 
-	float d = 0;
+	public AudioClip Ready;
+	public AudioClip Begin;
+
+	public AudioClip Multikill;
+	public AudioClip ComboBreaker;
+
+	public AudioClip Three;
+	public AudioClip Two;
+	public AudioClip One;
+
+	public AudioClip Win;
+	public AudioClip Flawless;
+
+	enum State
+	{
+		Idle, Ready, Game, Game3, Game2, Win, Score
+	}
+
+	State state = State.Idle;
+	float timer = 0;
 
 	bool fired = false;
 
@@ -21,41 +40,136 @@ public class GameController : MonoBehaviour {
 		killcount += 1;
 	}
 
+	int lastkillcount = 0;
+
+	void NewGame()
+	{
+		lastkillcount = 0;
+		killcount = 0;
+		fired = false;
+		// setup max ammo
+	}
+
 	void LateUpdate()
 	{
-		if(killcount > 1 )
+		if( fired )
 		{
-			Debug.Log("Multikill");
+			if(killcount > 1 )
+			{
+				Play(Multikill);
+			}
+
+			if( lastkillcount > 0 && killcount == 0 )
+			{
+				Play(ComboBreaker);
+			}
+
+			lastkillcount = killcount;
+			killcount = 0;
+			fired = false;
 		}
-		killcount = 0;
+	}
+
+	void OnGame()
+	{
+		if(GunControl.IsFireInput())
+		{
+			if(gun.FireGun())
+			{
+				fired = true;
+			}
+		}
+	}
+
+	void SetState(State n)
+	{
+		this.state = n;
+		this.timer = 0;
+	}
+
+	void SetPositions(float d)
+	{
+		foreach(var intro in intros)
+		{
+			intro.SetPosition(d);
+		}
+	}
+
+	void Play(AudioClip clip)
+	{
+		AudioSource.PlayClipAtPoint(clip, this.transform.position);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if( fired )
+		if(state != State.Idle)
 		{
-			d += 2.1f * Time.deltaTime;
-			if(d > 1)
-			{
-				d = 1;
-				if(GunControl.IsFireInput())
-				{
-					gun.FireGun();
-				}
-			}
+			this.timer += Time.deltaTime;
 		}
-		else
+		
+		switch(state)
 		{
+		case State.Idle:
+			SetPositions(0);
 			if(GunControl.IsFireInput())
 			{
-				fired = true;
+				SetState(State.Ready);
+				Play(Ready);
+				NewGame();
 			}
-		}
-
-		foreach(var intro in intros)
-		{
-			intro.SetPosition(d);
+			break;
+		case State.Ready:
+			SetPositions(timer);
+			if(timer > 1)
+			{
+				SetState(State.Game);
+				Play(Begin);
+			}
+			break;
+		case State.Game:
+			SetPositions(1);
+			OnGame();
+			if(timer > 15)
+			{
+				SetState(State.Game3);
+				Play(Three);
+			}
+			break;
+		case State.Game3:
+			SetPositions(1);
+			OnGame();
+			if(timer > 1)
+			{
+				SetState(State.Game2);
+				Play(Two);
+			}
+			break;
+		case State.Game2:
+			SetPositions(1);
+			OnGame();
+			if(timer > 1)
+			{
+				SetState(State.Win);
+				Play(One);
+			}
+			break;
+		case State.Win:
+			SetPositions(1-timer);
+			if(timer > 1)
+			{
+				SetState(State.Score);
+				Play(Win);
+			}
+			break;
+		case State.Score:
+			SetPositions(0);
+			if(timer > 1)
+			{
+				SetState(State.Idle);
+				Play(Flawless);
+			}
+			break;
 		}
 	}
 }
