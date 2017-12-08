@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RifleIntro : MonoBehaviour {
+public class IntroMove : MonoBehaviour {
 	float d = 0;
 
 	float y;
+	float x;
 
-	public float height = 10;
+	public float dy = 0;
+	public float dx = 0;
 
 	public void SetPosition(float d)
 	{
@@ -17,18 +19,23 @@ public class RifleIntro : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		y = this.transform.position.y;
+		x = this.transform.localPosition.x;
+		y = this.transform.localPosition.y;
+
 		UpdatePosition();
 	}
 
 	void UpdatePosition()
 	{
 		float d1 = 1-d;
-		CurtainControl.SetY(this.transform, y - height*d1);
+		var p = this.transform.localPosition;
+		p.x = x + dx*d1;
+		p.y = y + dy*d1;
+		this.transform.localPosition = p;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		UpdatePosition();	
+		UpdatePosition();
 	}
 }

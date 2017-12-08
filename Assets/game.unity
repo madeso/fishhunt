@@ -431,7 +431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4802985b244a2441e985016869af8ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 5
+  dy: -5
+  dx: 0
 --- !u!4 &46455077
 Transform:
   m_ObjectHideFlags: 0
@@ -5464,7 +5465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4802985b244a2441e985016869af8ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: -1
+  dy: 1
+  dx: 0
 --- !u!1 &1786271047
 GameObject:
   m_ObjectHideFlags: 0

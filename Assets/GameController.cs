@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 	CurtainControl curtains;
 
-	public RifleIntro[] intros;
+	public IntroMove[] intros;
 
 	float d = 0;
 
