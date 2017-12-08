@@ -39,14 +39,14 @@ public class CurtainControl : MonoBehaviour {
 		SetY(CurtainTop, topEnd + d1*CurtainHeight);
 	}
 
-	static void SetX(Transform t, float x)
+	public static void SetX(Transform t, float x)
 	{
 		var p = t.position;
 		p.x = x;
 		t.position = p;
 	}
 
-	static void SetY(Transform t, float y)
+	public static void SetY(Transform t, float y)
 	{
 		var p = t.position;
 		p.y = y;

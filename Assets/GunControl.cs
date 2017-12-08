@@ -99,10 +99,15 @@ public class GunControl : MonoBehaviour {
 		}
 		else
 		{
-			if(Input.GetMouseButtonDown(0)) {
+			if(IsFireInput()) {
 				FireGun();
 			}
 		}
+	}
+
+	public static bool IsFireInput()
+	{
+		return Input.GetMouseButtonDown(0);
 	}
 
 	void Play(AudioClip clip)

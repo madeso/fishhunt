@@ -5,7 +5,11 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 	CurtainControl curtains;
 
+	public RifleIntro intro;
+
 	float d = 0;
+
+	bool fired = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,9 +18,20 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		d += 0.1f * Time.deltaTime;
-		if(d > 1) d = 1;
+		if( fired )
+		{
+			d += 2.1f * Time.deltaTime;
+			if(d > 1) d = 1;
+		}
+		else
+		{
+			if(GunControl.IsFireInput())
+			{
+				fired = true;
+			}
+		}
 
 		curtains.SetPosition(d);
+		intro.SetPosition(d);
 	}
 }
