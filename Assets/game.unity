@@ -3763,6 +3763,7 @@ MonoBehaviour:
   - {fileID: 232264266}
   - {fileID: 1946568437}
   - {fileID: 1181429452}
+  gun: {fileID: 1278481461}
 --- !u!4 &1154422529
 Transform:
   m_ObjectHideFlags: 0

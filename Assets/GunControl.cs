@@ -56,22 +56,25 @@ public class GunControl : MonoBehaviour {
 	bool loading = false;
 	float t = 0;
 
-	void FireGun() {
-		if( Ammo.HasMoreBullets() )
+	public void FireGun() {
+		if(loading == false)
 		{
-			Play(FireSfx);
-			KillFish();
-			Ammo.Shoot();
-			FireScale.Fire();
-			this.Gun.FireGun();
-			var p = this.Aim.transform.position;
-			this.Spawner.SpawnBubblesFromShot(p.x, p.y);
-
-			if(!Ammo.HasMoreBullets())
+			if( Ammo.HasMoreBullets() )
 			{
-				loading = true;
-				t = 0;
-				SetDisable();
+				Play(FireSfx);
+				KillFish();
+				Ammo.Shoot();
+				FireScale.Fire();
+				this.Gun.FireGun();
+				var p = this.Aim.transform.position;
+				this.Spawner.SpawnBubblesFromShot(p.x, p.y);
+
+				if(!Ammo.HasMoreBullets())
+				{
+					loading = true;
+					t = 0;
+					SetDisable();
+				}
 			}
 		}
 	}
@@ -99,9 +102,6 @@ public class GunControl : MonoBehaviour {
 		}
 		else
 		{
-			if(IsFireInput()) {
-				FireGun();
-			}
 		}
 	}
 

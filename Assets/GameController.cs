@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 	public IntroMove[] intros;
+	public GunControl gun;
 
 	float d = 0;
 
@@ -18,7 +19,14 @@ public class GameController : MonoBehaviour {
 		if( fired )
 		{
 			d += 2.1f * Time.deltaTime;
-			if(d > 1) d = 1;
+			if(d > 1)
+			{
+				d = 1;
+				if(GunControl.IsFireInput())
+				{
+					gun.FireGun();
+				}
+			}
 		}
 		else
 		{
