@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 	public IntroMove[] intros;
 	public GunControl gun;
+	public FadeIn fadein;
 
 	public AudioClip Ready;
 	public AudioClip Begin;
@@ -89,6 +90,7 @@ public class GameController : MonoBehaviour {
 
 	void SetPositions(float d)
 	{
+		fadein.SetPosition(d);
 		foreach(var intro in intros)
 		{
 			intro.SetPosition(d);

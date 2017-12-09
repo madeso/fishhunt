@@ -3764,6 +3764,7 @@ MonoBehaviour:
   - {fileID: 1946568437}
   - {fileID: 1181429452}
   gun: {fileID: 1278481461}
+  fadein: {fileID: 1876874484}
   Ready: {fileID: 8300000, guid: 612e1c1a8ce704f849b00a644446dbcf, type: 3}
   Begin: {fileID: 8300000, guid: 6b85ccec1829a4f08817f8a3988dce37, type: 3}
   Multikill: {fileID: 8300000, guid: 5b5e6e9685e1a4ac69930a4ff836bab4, type: 3}
@@ -6181,6 +6182,7 @@ GameObject:
   - component: {fileID: 1876874481}
   - component: {fileID: 1876874482}
   - component: {fileID: 1876874483}
+  - component: {fileID: 1876874484}
   m_Layer: 0
   m_Name: RifleAim
   m_TagString: Untagged
@@ -6289,6 +6291,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14220d8b75f224d3c8616404e0bc4fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1876874484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876874477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1f58b5772d242cfb419fadc403820e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1885792381
